@@ -1,0 +1,62 @@
+enum Species{
+    BIRDS,
+    FISH,
+    MAMMALS,
+    REPTILES
+}
+
+type User {
+    id: Int
+    full_name: String
+    country_code: String
+    created_at:String
+    pets:[Pet]
+}
+
+type Pet {
+    id: Int
+    name: String
+    owner_id: Int
+    specie: Species
+    created_at:String
+    owner:User
+}
+
+input createUserInput{
+    full_name: String!
+    country_code: String!
+}
+
+input createPetInput{
+    name: String!
+    owner_id: Int!
+    specie: Species!
+}
+
+input updateUserInput{
+    id:Int!
+    full_name: String
+    country_code: String
+}
+
+
+input updatePetInput{
+    id:Int!
+    name: String!
+}
+
+type Query{
+    pets:[Pet]
+    users:[User]
+    user(id:Int!):User
+    pet(id:Int!):Pet
+}
+
+type Mutation{
+    createPet(pet:createPetInput!):Pet
+    createUser(user:createUserInput!):User
+    deletePet(id:Int!):String
+    deleteUser(id:Int!):String
+    updatePet(pet:updatePetInput!):Pet
+    updateUser(user:updateUserInput!):User
+}

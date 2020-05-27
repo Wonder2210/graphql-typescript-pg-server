@@ -1,28 +1,18 @@
 import express, { Application } from 'express';
 import {  ApolloServer , Config } from 'apollo-server-express';
-import config from './database/knexfile';
+import configuration from './database/knexfile';
+import schema from './schema';
+import Knex from 'knex';
+import{ Model} from 'objection';
+const db = Knex(configuration.development);
+
+Model.knex(db);
 
 
 const app: Application  = express();
 
-const schema = `
-    type User{
-        name: String
-    }
-
-    type Query {
-        user:User
-    }
-`
 const config : Config = {
-    typeDefs:schema,
-    resolvers : {
-        Query:{
-            user:(parent,args,ctx)=>{
-                return { name:"WOnder"}
-            }
-        }
-    },
+    schema:schema,
     introspection: true,//these lines are required to use the gui 
     playground: true,//   of playground
 
@@ -35,6 +25,6 @@ server.applyMiddleware({
     path: '/graphql'
   });
 
-app.listen(3000,()=>{
+app.listen(3000,()=>{// change later to 4000
     console.log("We are running on http://localhost:3000/graphql")
 })

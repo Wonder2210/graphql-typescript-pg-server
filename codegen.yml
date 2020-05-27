@@ -1,0 +1,13 @@
+overwrite: true
+schema: "http://localhost:3000/graphql"
+documents: null
+generates:
+  src/__generated__/generated-types.ts:
+    config:
+      mappers:
+        User:'./src/database/User.ts'
+        UpdateUserInput:'./src/database/User.ts'
+        Pet:'./src/database/Pet.ts'
+    plugins:
+      - "typescript"
+      - "typescript-resolvers"
