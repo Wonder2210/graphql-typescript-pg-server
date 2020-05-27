@@ -6,7 +6,7 @@ enum Species{
 }
 
 type User {
-    id: Int
+    id: Int!
     full_name: String
     country_code: String
     created_at:String
@@ -16,7 +16,7 @@ type User {
 type Pet {
     id: Int
     name: String
-    owner_id: Int
+    owner_id: Int!
     specie: Species
     created_at:String
     owner:User

@@ -9,6 +9,7 @@ class Pet extends Model{
     name?: Maybe<string>;
     specie?: Maybe<Species>; 
     created_at?:string;
+    owner_id!:number;
     owner?:User;
 
     static jsonSchema ={

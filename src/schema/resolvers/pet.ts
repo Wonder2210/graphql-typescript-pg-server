@@ -20,7 +20,7 @@ const resolvers : Resolvers = {
     },
     Pet:{
         owner:async(parent,args,ctx)=>{
-            const owner : User = await User.query().findById(parent.owner_id);
+            const owner : User = await Pet.relatedQuery("owner").for(parent.owner_id).first();
 
             return owner;
         }

@@ -22,7 +22,7 @@ const resolvers : Resolvers ={
     },
     User:{
         pets:async (parent,args,ctx)=>{
-            const pets : Pet[] = await Pet.query().where('owner_id',parent.id);
+            const pets : Pet[] = await User.relatedQuery("pets").for(parent.id);
 
             return pets;
         }

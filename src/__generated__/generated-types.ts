@@ -19,7 +19,7 @@ export enum Species {
 
 export type User = {
   __typename?: 'User';
-  id?: Maybe<Scalars['Int']>;
+  id: Scalars['Int'];
   full_name?: Maybe<Scalars['String']>;
   country_code?: Maybe<Scalars['String']>;
   created_at?: Maybe<Scalars['String']>;
@@ -30,7 +30,7 @@ export type Pet = {
   __typename?: 'Pet';
   id?: Maybe<Scalars['Int']>;
   name?: Maybe<Scalars['String']>;
-  owner_id?: Maybe<Scalars['Int']>;
+  owner_id: Scalars['Int'];
   specie?: Maybe<Species>;
   created_at?: Maybe<Scalars['String']>;
   owner?: Maybe<User>;
@@ -220,7 +220,7 @@ export type ResolversParentTypes = {
 };
 
 export type UserResolvers<ContextType = any, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
-  id?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   full_name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   country_code?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   created_at?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -231,7 +231,7 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
 export type PetResolvers<ContextType = any, ParentType extends ResolversParentTypes['Pet'] = ResolversParentTypes['Pet']> = {
   id?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  owner_id?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  owner_id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   specie?: Resolver<Maybe<ResolversTypes['Species']>, ParentType, ContextType>;
   created_at?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   owner?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>;

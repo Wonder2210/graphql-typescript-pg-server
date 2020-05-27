@@ -12,7 +12,7 @@ export async function up(knex: Knex): Promise<any> {
     .createTable('pets',(table:Knex.CreateTableBuilder)=>{
         table.increments('id');
         table.string('name');
-        table.integer('owner_id').references("users.id");
+        table.integer('owner_id').references("users.id").onDelete("CASCADE");
         table.string('specie');
         table.timestamps(true,true);
     })
