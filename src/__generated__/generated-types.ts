@@ -28,7 +28,7 @@ export type User = {
 
 export type Pet = {
   __typename?: 'Pet';
-  id?: Maybe<Scalars['Int']>;
+  id: Scalars['Int'];
   name?: Maybe<Scalars['String']>;
   owner_id: Scalars['Int'];
   specie?: Maybe<Species>;
@@ -229,7 +229,7 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
 };
 
 export type PetResolvers<ContextType = any, ParentType extends ResolversParentTypes['Pet'] = ResolversParentTypes['Pet']> = {
-  id?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   owner_id?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   specie?: Resolver<Maybe<ResolversTypes['Species']>, ParentType, ContextType>;
