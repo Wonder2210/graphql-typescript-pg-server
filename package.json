@@ -4,15 +4,16 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "concurrently \" nodemon ./dist/bundle.js \" \" webpack --watch\" ",
+    "dev": "concurrently \" nodemon ./dist/bundle.js \" \" webpack --watch --config webpack.dev.js\" ",
     "build": "webpack",
     "start": "",
-    "migrate:up":"knex --knexfile ./src/database/knexfile.ts migrate:latest",
+    "migrate:up": "knex --knexfile ./src/database/knexfile.ts migrate:latest",
     "generate:types": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
     "apollo-server-express": "^2.13.1",
     "body-parser": "^1.19.0",
+    "dataloader": "^2.0.0",
     "express": "^4.17.1",
     "graphql": "^15.0.0",
     "graphql-tools": "^6.0.0",
@@ -30,12 +31,14 @@
     "@types/node": "^14.0.1",
     "awesome-typescript-loader": "^5.2.1",
     "concurrently": "^5.2.0",
+    "dotenv-webpack": "^1.8.0",
     "graphql-tag": "^2.10.3",
     "nodemon": "^2.0.4",
     "ts-node": "^8.10.1",
     "typescript": "^3.9.2",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
+    "webpack-merge": "^4.2.2",
     "webpack-node-externals": "^1.7.2"
   }
 }

@@ -20,9 +20,8 @@ const resolvers : Resolvers = {
     },
     Pet:{
         owner:async(parent,args,ctx)=>{
-            const owner : User = await Pet.relatedQuery("owner").for(parent.id).first();
-
-            return owner;
+            const {loaders:{users}} = ctx;
+            return users.load(parent.id);
         }
     },
     Mutation:{

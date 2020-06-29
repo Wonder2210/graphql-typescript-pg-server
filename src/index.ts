@@ -5,9 +5,13 @@ import Knex from 'knex';
 import{ Model} from 'objection';
 import dbconfig from './database/config';
 const db = Knex(dbconfig["development"]);
+import DataLoader from 'dataloader';
+import {Pets,Users} from './utils/loaders';
 
 Model.knex(db);
 
+
+console.log(process.env.DATABASE);
 
 const app: Application  = express();
 
@@ -15,6 +19,13 @@ const config : Config = {
     schema:schema,
     introspection: true,//these lines are required to use the gui 
     playground: true,//   of playground
+    tracing:true,
+    context:{
+        loaders:{
+            users: new DataLoader(Users),
+            pets: new DataLoader(Pets),
+        }
+    }
 
 }
 
