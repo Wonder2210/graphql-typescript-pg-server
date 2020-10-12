@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create pet 1`] = `
+Object {
+  "data": Object {
+    "createPet": Object {
+      "id": 4,
+      "name": "Optimus",
+      "specie": "MAMMALS",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`create user  1`] = `
+Object {
+  "data": Object {
+    "createUser": Object {
+      "country_code": "ve",
+      "full_name": "Wonder",
+      "id": 4,
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`delete user 1`] = `
+Object {
+  "data": Object {
+    "deleteUser": "Succesfull deleted",
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`query pets 1`] = `
+Object {
+  "data": Object {
+    "pets": Array [
+      Object {
+        "id": 1,
+        "name": "spot",
+        "owner_id": 1,
+        "specie": "MAMMALS",
+      },
+      Object {
+        "id": 2,
+        "name": "chief",
+        "owner_id": 2,
+        "specie": "MAMMALS",
+      },
+      Object {
+        "id": 3,
+        "name": "king",
+        "owner_id": 3,
+        "specie": "MAMMALS",
+      },
+    ],
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`query users 1`] = `
+Object {
+  "data": Object {
+    "users": Array [
+      Object {
+        "country_code": "58",
+        "full_name": "luis",
+        "id": 1,
+      },
+      Object {
+        "country_code": "59",
+        "full_name": "jose",
+        "id": 2,
+      },
+      Object {
+        "country_code": "39",
+        "full_name": "raul",
+        "id": 3,
+      },
+    ],
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`query users and its pets 1`] = `
+Object {
+  "data": Object {
+    "users": Array [
+      Object {
+        "country_code": "58",
+        "full_name": "luis",
+        "id": 1,
+        "pets": Array [
+          Object {
+            "id": 1,
+            "name": "spot",
+            "specie": "MAMMALS",
+          },
+        ],
+      },
+      Object {
+        "country_code": "59",
+        "full_name": "jose",
+        "id": 2,
+        "pets": Array [
+          Object {
+            "id": 2,
+            "name": "chief",
+            "specie": "MAMMALS",
+          },
+        ],
+      },
+      Object {
+        "country_code": "39",
+        "full_name": "raul",
+        "id": 3,
+        "pets": Array [
+          Object {
+            "id": 3,
+            "name": "king",
+            "specie": "MAMMALS",
+          },
+        ],
+      },
+    ],
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`update user 1`] = `
+Object {
+  "data": Object {
+    "updateUser": Object {
+      "country_code": "58",
+      "full_name": "wilson",
+      "id": 1,
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
