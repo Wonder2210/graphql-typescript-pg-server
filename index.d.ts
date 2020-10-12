@@ -10,3 +10,5 @@ declare module '*.gql' {
   
     export = Schema
   }
+
+declare module "knex-cleaner" 
